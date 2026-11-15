@@ -51,7 +51,7 @@
 // });
 // console.log("outer");
 
-
+/*
 
 let bulb=document.querySelector(".bulb");
 let button =document.querySelector("button");
@@ -64,12 +64,32 @@ button.addEventListener('click',() =>{
     }
     else{
         bulb.style.backgroundColor="yellow";
-        toggle=true;
+        toggle=true;   
     }
     
    
  });
 console.log("outer");
 
+*/
+
+let form =document.querySelector("form");
+console.log(form);
 
 
+form.addEventListener("submit",(events) =>{
+      events.preventDefault();
+      console.log(events);
+      
+      if(form[0].value.length <= 0) {
+          alert("Please enter your name");
+      } 
+      let h1 = document.createElement("h1");
+      
+      h1.textContent = form[0].value;
+
+      document.body.appendChild(h1);     //Append:it will add the element at the end of the body tag
+     //document.body.prepend(h1);      //Prepend:it will add the element at the start of the body tag
+
+ form.reset();
+});
